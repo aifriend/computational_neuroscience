@@ -28,7 +28,8 @@ num_timesteps = 150
 
 sta = compute_sta(stim, rho, num_timesteps)
 
-time = (np.arange(-num_timesteps, 0) + 1) * sampling_period
+# Window covers the num_timesteps samples ending at the spike (time 0).
+time = np.arange(-num_timesteps + 1, 1) * sampling_period
 
 plt.plot(time, sta)
 plt.xlabel('Time (ms)')
