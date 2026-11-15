@@ -35,12 +35,11 @@ def compute_sta(stim, rho, num_timesteps):
     # The STA is E[stimulus | spike], computed by averaging all stimulus
     # segments that precede spikes.
     # 
-    # For each spike, extract the stimulus window from num_timesteps before
-    # the spike (exclusive) to the spike time (inclusive).
+    # For each spike, extract the window of num_timesteps samples that ends
+    # at the spike time (inclusive), i.e. indices spike_time-num_timesteps+1
+    # through spike_time.
     for spike_time in spike_times:
-        # Extract stimulus segment: from (spike_time - num_timesteps) to spike_time
-        # This gives us num_timesteps samples before the spike
-        stimulus_window = stim[spike_time - num_timesteps:spike_time]
+        stimulus_window = stim[spike_time - num_timesteps + 1:spike_time + 1]
         sta += stimulus_window
     
     # Average by dividing by the number of spikes (Bayes' rule: conditional expectation)
