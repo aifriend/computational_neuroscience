@@ -1,5 +1,8 @@
 # Computational Neuroscience - Encoding Problems
 
+[![CI](https://github.com/aifriend/computational_neuroscience/actions/workflows/ci.yml/badge.svg)](https://github.com/aifriend/computational_neuroscience/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 This repository contains solutions to computational neuroscience problems focusing on statistical inference, decision theory, and neural encoding.
 
 ## Overview
@@ -38,8 +41,8 @@ This project implements solutions for various computational neuroscience problem
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/aifriend/computational_neuroscience_washington.git
-cd computational_neuroscience_washington
+git clone https://github.com/aifriend/computational_neuroscience.git
+cd computational_neuroscience
 ```
 
 2. Create a virtual environment (recommended):
@@ -132,7 +135,9 @@ Given:
 **Question**: Find the optimal decision threshold r.
 
 The solution uses the likelihood ratio test formulation:
-P(r|s1) / P(r|s2) = C(s2|s1) / C(s1|s2) = 2
+P(r|s1) / P(r|s2) = C(s1|s2) / C(s2|s1) = 0.5
+
+This gives an optimal threshold of r = 5.978. With symmetric costs (ratio 1) the threshold is 5.83.
 
 ### Problem 3: Spike-Triggered Average
 
@@ -172,7 +177,7 @@ where C(s2|s1) is the cost of deciding s2 when the true state is s1.
 
 ## License
 
-This project is provided for educational purposes.
+MIT, see [LICENSE](LICENSE).
 
 ## Author
 
